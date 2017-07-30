@@ -11,9 +11,19 @@ if(active) {
 	vy = sign(yTarget-y)*spd;
 
 	y = Approach(y, yTarget, vy);
+	
+	//repeat(abs(vy)) {
+	//	if(place_meeting(x, y + sign(vy), oParSolid) or y == yTarget)
+	//		break;
+			
+	//	y += sign(vy);
+	//}
 
 	if (target != noone) {
 		target.y += vy;
 	}
 
 }
+
+show_debug_message(x);
+show_debug_message(y);

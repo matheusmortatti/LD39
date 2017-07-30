@@ -2,10 +2,12 @@
 
 camera = camera_create();
 
+resolutionX = 460;
+resolutionY = 270;
 
 
 var vm = matrix_build_lookat(x, y, -10, x, y, 0, 0, 1, 0);
-var pm = matrix_build_projection_ortho(460, 270, 1, 10000);
+var pm = matrix_build_projection_ortho(resolutionX, resolutionY, 1, 10000);
 
 camera_set_view_mat(camera, vm);
 camera_set_proj_mat(camera, pm);

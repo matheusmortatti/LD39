@@ -2,7 +2,7 @@
 
 // Input //////////////////////////////////////////////////////////////////////
 
-var kLeft, kRight, kUp, kDown, kJump, kJumpRelease, kHoldShoot, kBlock, kRollL, kRollR, tempAccel, tempFric;
+var kLeft, kRight, kUp, kDown, kJump, kJumpRelease, kDischarge, kCharge, kHoldShoot, kBlock, kRollL, kRollR, tempAccel, tempFric;
 
 kLeft        = keyboard_check(vk_left)  || gamepad_axis_value(0, gp_axislh) < -0.4;
 kRight       = keyboard_check(vk_right) || gamepad_axis_value(0, gp_axislh) >  0.4;
@@ -13,6 +13,8 @@ kJump        = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed
 kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
 
 kHoldShoot   = keyboard_check(ord("X"))          || gamepad_button_check(0, gp_face3);
+kCharge	     = keyboard_check(ord("X"))          || gamepad_button_check(0, gp_shoulderrb);
+kDischarge   = keyboard_check(ord("Z"))          || gamepad_button_check(0, gp_shoulderlb);
 kShoot       = keyboard_check_released(ord("X")) || gamepad_button_check_released(0, gp_face3);
 kBlock       = keyboard_check(ord("C"))          || gamepad_button_check(0, gp_face2);
 kRollL       = keyboard_check_pressed(ord("A"))  || gamepad_button_check_pressed(0, gp_shoulderlb);
@@ -330,7 +332,7 @@ yscale = Approach(yscale, 1, 0.05);
 show_debug_message(energy);
 
 // Give energy to battery
-if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and keyboard_check(ord("Z"))) {
+if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and kDischarge) {
 	state = CHARGE;
 	var bTarget = instance_place(x, y, oBattery);
 	
@@ -339,7 +341,7 @@ if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and keyboard_check(ord
 		energy -= 1;
 	}
 }
-else if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and keyboard_check(ord("X"))) {
+else if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and kCharge) {
 	state = CHARGE;
 	var bTarget = instance_place(x, y, oBattery);
 	
@@ -348,16 +350,20 @@ else if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and keyboard_chec
 		energy += 1;
 	}
 }
-else if(!IsAny(state, CLIMB) and place_meeting(x, y, oChargingPad) and keyboard_check(ord("X"))) {
+else if(!IsAny(state, CLIMB) and place_meeting(x, y, oChargingPad) and kDischarge) {
+	energy -= 5*depletion;
+	state = CHARGE;
+}
+else if(!IsAny(state, CLIMB) and place_meeting(x, y, oChargingPad) and kCharge) {
 	energy += 1;
 	state = CHARGE;
 }
 else if(state == CHARGE)
 	state = INTER;
 
-if (vx != 0 or vy != 0) {
+//if (vx != 0 or vy != 0) {
 	energy -= depletion;
-}
+//}
 
 energy = clamp(energy, 0, 100);
 

@@ -3,6 +3,8 @@
 // Inherit oParEntity variables
 event_inherited();
 
+depth = -1000;
+
 facing = 1;
 
 // Movement ///////////////////////////////////////////////////////////////////

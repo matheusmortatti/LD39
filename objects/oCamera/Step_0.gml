@@ -7,6 +7,9 @@ else						  follor = oPlayer;
 x += (xTo - x)/10;
 y += (yTo - y)/10;
 
+x = clamp(x, 0 + resolutionX/2, room_width-resolutionX/2);
+y = clamp(y, 0 + resolutionY/2, room_height-resolutionY/2);
+
 if (follow != noone) {
 	xTo = follow.x;
 	yTo = follow.y;

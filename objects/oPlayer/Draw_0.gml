@@ -4,7 +4,7 @@
 var sRun, sIdle, sJump, sCharging;
 var pMask = mask_index;
 
-if(energy > 80) {
+if(energy > 95) {
 	sRun = sPlayerRun55;
 	sIdle = sPlayerIdle55;
 	sJump = sPlayerJump55;
@@ -14,7 +14,7 @@ if(energy > 80) {
 	if(place_meeting(x, y, oParSolid))
 		mask_index = pMask;
 }
-else if(energy <= 80 and energy > 60) {
+else if(energy <= 95 and energy > 60) {
 	sRun = sPlayerRun45;
 	sIdle = sPlayerIdle45;
 	sJump = sPlayerJump45;
