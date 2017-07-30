@@ -2,8 +2,8 @@
 
 camera = camera_create();
 
-resolutionX = 460;
-resolutionY = 270;
+resolutionX = 400;
+resolutionY = 225;
 
 
 var vm = matrix_build_lookat(x, y, -10, x, y, 0, 0, 1, 0);

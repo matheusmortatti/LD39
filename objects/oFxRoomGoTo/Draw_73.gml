@@ -8,7 +8,10 @@ if (image_alpha >= 1) {
     //    instance_destroy();
     
     if (target == -1)
-        room_goto_next();
+		if(room_next(room) != -1)
+			room_goto_next();
+		else
+			room_goto(room_first);
     else
         room_goto(target);
 }
