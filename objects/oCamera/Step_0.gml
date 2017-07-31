@@ -4,8 +4,8 @@
 if(!instance_exists(oPlayer)) follow = noone;
 else						  follor = oPlayer;
 
-x += (xTo - x)/10;
-y += (yTo - y)/10;
+x += (xTo - x)/5;
+y += (yTo - y)/5;
 
 x = clamp(x, 0 + resolutionX/2, room_width-resolutionX/2);
 y = clamp(y, 0 + resolutionY/2, room_height-resolutionY/2);

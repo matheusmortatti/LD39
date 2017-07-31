@@ -1,4 +1,4 @@
-draw_text(__view_get( e__VW.XView, 0 ) + 16, __view_get( e__VW.YView, 0 ) + 16, string_hash_to_newline(string("Press \'P\' to toggle touch controls on/off")));
+
 
 if (instance_exists(oTouchCompatible)) {
     draw_sprite(sLeftArrow, 0, __view_get( e__VW.XView, 0 ) + 16, __view_get( e__VW.YView, 0 ) + 280);
