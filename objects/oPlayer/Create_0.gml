@@ -50,7 +50,7 @@ ropeAttach = noone;
 arrowAngle = 0;
 
 energy		= 100;
-depletion	= 0.1;
+depletion	= 0.2;
 target_exc	= noone;
 
 //fallTime = 0;
