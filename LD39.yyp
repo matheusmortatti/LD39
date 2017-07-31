@@ -663,6 +663,14 @@
             }
         },
         {
+            "Key": "539210dc-c419-421b-8c62-0a516e450f38",
+            "Value": {
+                "id": "b05481be-37ea-4e8a-bfe4-8ae3ee0c2618",
+                "resourcePath": "sounds\\sndCharge\\sndCharge.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "53be83d4-3883-4dda-93c0-8feed11d6c8b",
             "Value": {
                 "id": "2813cf45-822f-4a15-bd69-edfe1ebf3854",
@@ -788,6 +796,14 @@
                 "id": "e4724e67-9ed2-4ff4-96b9-900e7ef185ec",
                 "resourcePath": "tilesets\\tiles0_tileset\\tiles0_tileset.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "618a81fa-bfd2-40fe-825f-87f7000aa464",
+            "Value": {
+                "id": "5be3dd8b-5be9-46c8-bc1c-0997bc0d149e",
+                "resourcePath": "sounds\\sndMovingPlat\\sndMovingPlat.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1143,6 +1159,14 @@
             }
         },
         {
+            "Key": "8f194e99-2ce8-4025-bebc-ef9512764739",
+            "Value": {
+                "id": "a2804f3d-78d8-47d5-8ec0-f55bf2bc8973",
+                "resourcePath": "sounds\\sndMain\\sndMain.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "9013d131-1868-41e1-a1ef-3fae3745871c",
             "Value": {
                 "id": "84250a0d-35f8-420d-954a-fe5db296bfc6",
@@ -1423,6 +1447,14 @@
             }
         },
         {
+            "Key": "b248a1d7-c276-430f-a44c-20cb0a3d0cc8",
+            "Value": {
+                "id": "fa8f7e4b-9785-48ba-8636-20a29cf199a5",
+                "resourcePath": "sounds\\sndJump\\sndJump.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "b2aa9076-bcbe-422b-b205-4f2a618a7aac",
             "Value": {
                 "id": "85526e93-38cb-49ed-8a8b-0961aaae3850",
@@ -1571,6 +1603,14 @@
             "Value": {
                 "id": "3e921431-2a34-4e82-8e6e-a4267205234e",
                 "resourcePath": "objects\\oBGGrass1\\oBGGrass1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "c6a03c15-8956-43b0-8a86-c3c8a778bdb1",
+            "Value": {
+                "id": "4571c6c3-6cf5-478d-a2a5-0a7ca7d17f31",
+                "resourcePath": "objects\\oPlayMainSong\\oPlayMainSong.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1924,6 +1964,14 @@
                 "id": "1e3942ea-5d54-4dfc-9f05-02ef8c742377",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f4785524-8042-46b4-af25-11ddb31e4f2e",
+            "Value": {
+                "id": "be776bfe-0b95-409c-bfa1-0e38f118b33c",
+                "resourcePath": "sounds\\sndFall\\sndFall.yy",
+                "resourceType": "GMSound"
             }
         },
         {

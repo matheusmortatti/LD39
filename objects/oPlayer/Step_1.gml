@@ -13,6 +13,7 @@ if (onGround && !onGroundPrev) {
     for (var i = 0; i < 4; ++i) {
         instance_create(x + random_range(-8, 8), y + 8 + random_range(-2, 2), oParticlePlayer);
     }
+	audio_play_sound(sndFall, 0, false);
     
     xscale = 1.33;
     yscale = 0.67;

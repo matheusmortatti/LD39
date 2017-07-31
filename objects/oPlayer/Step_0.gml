@@ -98,7 +98,9 @@ if (kJump && cLeft && !onGround) {
     } else {
         vy = -jumpHeight * 1.1;
         vx =  vxMax; 
-    }  
+    }
+	
+	audio_play_sound(sndJump, 0, false);
 }
 
 if (kJump && cRight && !onGround) {
@@ -111,7 +113,9 @@ if (kJump && cRight && !onGround) {
     } else {
         vy = -jumpHeight * 1.1;
         vx = -vxMax;
-    }  
+    }
+	
+	audio_play_sound(sndJump, 0, false); 
 }
 
 if(place_meeting(x, y, oRope) and (kUp or kDown)) {
@@ -168,6 +172,7 @@ if(state == CLIMB) {
  
 // Jump 
 if (kJump) { 
+	audio_play_sound(sndJump, 0, false);
     if (onGround) {
         // Fall thru platform
         if (kDown) {
@@ -370,4 +375,12 @@ energy = clamp(energy, 0, 100);
 if(energy <= 0) {
 	instance_destroy();
 	instance_create(0, 0, oFxRoomRestart);
+}
+
+if (state == CHARGE and chargeSound == -1) {
+	chargeSound = audio_play_sound(sndCharge, 10, true);
+}
+else if(state != CHARGE) {
+	audio_stop_sound(sndCharge);
+	chargeSound = -1;
 }

@@ -2,7 +2,14 @@
 // You can write your code in this editor
 
 if(active) {
-
+	if(!audioIsPlaying and vy!=0) {
+		audio_play_sound(sndMovingPlat, 0, true);
+		audioIsPlaying = true;
+	}
+	else if (vy == 0)
+		audio_stop_sound(sndMovingPlat);
+		
+		
 	if(yTarget == y and alarm[0] <= 0) {
 		spd = 0;
 		alarm[0] = delay;
@@ -24,6 +31,7 @@ if(active) {
 	}
 
 }
-
-show_debug_message(x);
-show_debug_message(y);
+else {
+	audioIsPlaying=false;
+	audio_stop_sound(sndMovingPlat);
+}

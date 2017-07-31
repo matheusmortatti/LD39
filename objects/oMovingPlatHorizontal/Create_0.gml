@@ -18,3 +18,5 @@ delay = 2*room_speed;
 target = noone;
 
 active = false;
+
+audioIsPlaying = false;

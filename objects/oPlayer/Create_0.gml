@@ -53,6 +53,8 @@ energy		= 100;
 depletion	= 0.2;
 target_exc	= noone;
 
+chargeSound = -1;
+
 //fallTime = 0;
 //fallMax  = 28;
 
