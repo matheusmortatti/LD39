@@ -2,15 +2,15 @@
 // You can write your code in this editor
 
 if(active) {
-	yTarget = yEnd;
+	xTarget = xEnd;
 }
 else
-	yTarget = yStart;
+	xTarget = xStart;
 
-vy = sign(yTarget-y)*spd;
+vx = sign(xTarget-x)*spd;
 
-y = Approach(y, yTarget, vy);
+x = Approach(x, xTarget, vx);
 
 if (target != noone) {
-	target.y += vy;
+	target.x += vx;
 }
