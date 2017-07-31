@@ -346,8 +346,8 @@ else if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and kCharge) {
 	var bTarget = instance_place(x, y, oBattery);
 	
 	if (0 < bTarget.energy) {
-		bTarget.energy -= 1;
-		energy += 1;
+		bTarget.energy -= 2;
+		energy += 2;
 	}
 }
 else if(!IsAny(state, CLIMB) and place_meeting(x, y, oChargingPad) and kDischarge) {
@@ -355,7 +355,7 @@ else if(!IsAny(state, CLIMB) and place_meeting(x, y, oChargingPad) and kDischarg
 	state = CHARGE;
 }
 else if(!IsAny(state, CLIMB) and place_meeting(x, y, oChargingPad) and kCharge) {
-	energy += 1;
+	energy += 2;
 	state = CHARGE;
 }
 else if(state == CHARGE)
