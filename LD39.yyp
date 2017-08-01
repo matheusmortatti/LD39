@@ -1015,6 +1015,14 @@
             }
         },
         {
+            "Key": "739fd579-30fe-4fc4-bca1-34a42267848f",
+            "Value": {
+                "id": "db60c7cd-cc2a-45f1-a9be-54480e2a2529",
+                "resourcePath": "sprites\\sMenu\\sMenu.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7560c432-851a-4915-8d18-6ab76c8e8c7d",
             "Value": {
                 "id": "4c3a4b74-32c4-4ce4-94bc-55aae062c1df",

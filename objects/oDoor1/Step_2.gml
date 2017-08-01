@@ -11,6 +11,8 @@ vx = sign(xTarget-x)*spd;
 
 x = Approach(x, xTarget, vx);
 
+
+target = instance_place(x, y-1, oPlayer);
 if (target != noone) {
 	target.x += vx;
 }

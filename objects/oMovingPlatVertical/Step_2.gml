@@ -25,7 +25,8 @@ if(active) {
 			
 	//	y += sign(vy);
 	//}
-
+	
+	target = instance_place(x, y-1, oPlayer);
 	if (target != noone) {
 		target.y += vy;
 	}
