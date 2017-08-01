@@ -27,12 +27,4 @@ if (kNext) {
         room_goto_next();
 }
 
-// Toggle touch controls
-if (keyboard_check_pressed(ord("P"))) {
-    if (instance_exists(oTouchCompatible))
-        with (oTouchCompatible)
-            instance_destroy();
-    else
-        instance_create(0, 0, oTouchCompatible);
-}
 

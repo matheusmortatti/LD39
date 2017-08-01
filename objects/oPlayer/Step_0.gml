@@ -117,58 +117,6 @@ if (kJump && cRight && !onGround) {
 	
 	audio_play_sound(sndJump, 0, false); 
 }
-
-if(place_meeting(x, y, oRope) and (kUp or kDown)) {
-    ropeAttach = instance_place(x, y, oRope);
-    state = CLIMB;
-}
-
-// Rope Climbing
-if(state == CLIMB) {
-    vx = 0;
-    vy = 0;
-    
-    var nextAttach = instance_place(x, y, oRope)
-    ropeAttach = nextAttach;
-    if(nextAttach != noone and nextAttach != ropeAttach)
-        ropeAttach = nextAttach;
-        
-    if(instance_exists(ropeAttach)) {
-        x = ropeAttach.x;
-        
-        if(kUp and !kDown) {
-            vy = -2.0;
-        }
-        else if(!kUp and kDown) {
-            vy = 2.0;
-        }
-        else {
-            
-        }
-        
-        if(kLeft and !kRight) {
-           // with(ropeAttach)
-               // physics_apply_impulse(phy_position_x, phy_position_y, -10, 0)
-        }
-        else if(!kLeft and kRight) {
-            //with(ropeAttach)
-                //physics_apply_impulse(phy_position_x, phy_position_y, 10, 0)
-        }
-        else {
-            
-        }
-    }
-    else {
-        state = JUMP;
-    }
-    
-    if(kJump) {
-        state = JUMP;
-        vy = -jumpHeight;
-        ropeAttach = noone;
-    }
-    
-}
  
 // Jump 
 if (kJump) { 
@@ -333,8 +281,6 @@ yscale = Approach(yscale, 1, 0.05);
 //}
 
 // Reduce size
-
-show_debug_message(energy);
 
 // Give energy to battery
 if(!IsAny(state, CLIMB) and place_meeting(x, y, oBattery) and kDischarge) {
