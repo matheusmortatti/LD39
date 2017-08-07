@@ -5,6 +5,24 @@
 //    state = CLIMB;
 //}
 
+if(energy > 95) {
+	jumpHeight = jumpHeightMax;
+}
+else if(energy <= 95 and energy > 60) {
+	jumpHeight = jumpHeightMax;
+}
+else if(energy <= 60 and energy > 40) {
+	jumpHeight = jumpHeightMax/1.2;
+}
+else if(energy <= 40 and energy > 20) {
+	jumpHeight = jumpHeightMax/1.4;
+}
+else if(energy <= 20 and energy > 0) {
+	jumpHeight = jumpHeightMax/1.5;
+}
+
+if(place_meeting(x, y, oParSolid)) instance_destroy();
+
 var onGroundPrev = onGround;
 
 event_inherited();

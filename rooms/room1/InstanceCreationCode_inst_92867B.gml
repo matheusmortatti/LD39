@@ -1,1 +1,1 @@
-depletion = 0.75
+depletion = 0.9

@@ -6,8 +6,10 @@ if(active) {
 		audio_play_sound(sndMovingPlat, 0, true);
 		audioIsPlaying = true;
 	}
-	else if (vy == 0)
+	else if (vy == 0) {
 		audio_stop_sound(sndMovingPlat);
+		audioIsPlaying = false;
+	}
 		
 		
 	if(yTarget == y and alarm[0] <= 0) {
@@ -19,6 +21,17 @@ if(active) {
 
 	y = Approach(y, yTarget, vy);
 	
+	if(place_meeting(x, y, oParSolid)) {
+		while(place_meeting(x, y, oParSolid)) {
+			y -= sign(vy);
+		}
+		
+		if(alarm[0] <= 0) {
+			spd = 0;
+			alarm[0] = delay;
+		}
+	}
+	
 	//repeat(abs(vy)) {
 	//	if(place_meeting(x, y + sign(vy), oParSolid) or y == yTarget)
 	//		break;
@@ -29,6 +42,14 @@ if(active) {
 	target = instance_place(x, y-1, oPlayer);
 	if (target != noone) {
 		target.y += vy;
+		
+		with(target) {
+			if(place_meeting(x, y, oParSolid)) {
+				while(place_meeting(x, y, oParSolid)) {
+					y -= sign(other.vy);
+				}
+			}
+		}
 	}
 
 }

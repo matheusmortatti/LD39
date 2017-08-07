@@ -320,7 +320,6 @@ energy = clamp(energy, 0, 100);
 
 if(energy <= 0) {
 	instance_destroy();
-	instance_create(0, 0, oFxRoomRestart);
 }
 
 if (state == CHARGE and chargeSound == -1) {

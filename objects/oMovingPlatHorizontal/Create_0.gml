@@ -7,6 +7,7 @@
 xStart = x;
 xEnd = x+10;
 
+vx = 0;
 
 xTarget = xEnd;
 

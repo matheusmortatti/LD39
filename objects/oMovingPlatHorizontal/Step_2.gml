@@ -18,10 +18,29 @@ if(active) {
 	vx = sign(xTarget-x)*spd;
 
 	x = Approach(x, xTarget, vx);
+	
+	if(place_meeting(x, y, oParSolid)) {
+		while(place_meeting(x, y, oParSolid)) {
+			x -= sign(vx);
+		}
+		
+		if(alarm[0] <= 0) {
+			spd = 0;
+			alarm[0] = delay;
+		}
+	}
 
 	target = instance_place(x, y-1, oPlayer);
 	if (target != noone) {
 		target.x += vx;
+		
+		with(target) {
+			if(place_meeting(x, y, oParSolid)) {
+				while(place_meeting(x, y, oParSolid)) {
+					x -= sign(other.vx);
+				}
+			}
+		}
 	}
 
 }

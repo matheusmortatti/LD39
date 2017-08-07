@@ -7,6 +7,8 @@
 yStart = y;
 yEnd = y+10;
 
+vy = 0;
+
 
 yTarget = yEnd;
 
